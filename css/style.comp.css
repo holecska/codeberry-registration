@@ -1,0 +1,233 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 10px; }
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400; }
+
+.container {
+  display: grid;
+  grid-template-columns: [left-side-start] 50% [left-side-end right-side-start] 50% [right-side-end];
+  grid-template-rows: minmax(80rem, max-content) 10rem; }
+  @media screen and (max-width: 75em) {
+    .container {
+      grid-template-columns: 100%;
+      grid-template-rows: repeat(2, minmax(50rem, max-content)) 10rem; } }
+
+.footer {
+  grid-row: 2/3;
+  grid-column: 1/-1;
+  background-color: #211138;
+  display: flex;
+  align-items: center; }
+  @media screen and (max-width: 75em) {
+    .footer {
+      grid-row: 3/4; } }
+  .footer__text {
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 2.4px;
+    line-height: 15px;
+    text-align: center;
+    color: #B2ACBA;
+    text-transform: uppercase;
+    padding: 0 5rem; }
+  .footer__link {
+    color: #6200EA;
+    cursor: pointer; }
+
+.left-side {
+  grid-column: left-side-start / left-side-end;
+  grid-row: 1/2;
+  background-color: #6200EA;
+  display: grid;
+  align-items: center;
+  justify-content: center; }
+  @media screen and (max-width: 75em) {
+    .left-side {
+      grid-column: 1/-1; } }
+  .left-side__logo-box {
+    margin: 15px auto 15px 30px;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .left-side__logo {
+    width: 18rem;
+    height: 5rem; }
+  .left-side__benefit-container {
+    height: 22.5vw;
+    min-width: 40rem;
+    padding: 3.75vw;
+    display: grid;
+    grid-template-columns: minmax(26.25vw, max-content);
+    align-content: space-between; }
+    @media screen and (max-width: 75em) {
+      .left-side__benefit-container {
+        height: 30rem;
+        padding: 3rem; } }
+    @media screen and (max-width: 31.25em) {
+      .left-side__benefit-container {
+        height: 30rem;
+        min-width: 20rem;
+        padding: 3rem; } }
+  .left-side__benefit {
+    display: flex;
+    align-items: center;
+    color: #fff; }
+    .left-side__benefit--text {
+      font-size: 1.875vw;
+      font-family: "Montserrat", sans-serif;
+      font-weight: bold;
+      line-height: 2.5vw;
+      margin-left: 2rem; }
+      @media screen and (max-width: 75em) {
+        .left-side__benefit--text {
+          font-size: 2.25rem;
+          line-height: 1; } }
+      @media screen and (max-width: 31.25em) {
+        .left-side__benefit--text {
+          font-size: 1.75rem; } }
+    .left-side__benefit--icon-box {
+      width: 4rem;
+      height: 4rem;
+      font-size: 1rem;
+      border-radius: 50%;
+      background-color: #fff;
+      display: inline-block;
+      position: relative; }
+    .left-side__benefit--icon {
+      color: #6200EA;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); }
+
+.right-side::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/bailey-zindel-396398-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  mix-blend-mode: luminosity;
+  filter: grayscale(100%);
+  z-index: -1; }
+
+.right-side {
+  grid-column: right-side-start / right-side-end;
+  grid-row: 1/2;
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center; }
+  @media screen and (max-width: 75em) {
+    .right-side {
+      grid-column: 1/-1;
+      grid-row: 2/3; } }
+
+.sign-form {
+  background-color: #fff;
+  width: 33.75vw;
+  padding: 6rem;
+  border-radius: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold; }
+  @media screen and (max-width: 75em) {
+    .sign-form {
+      width: 40rem;
+      margin: 10rem auto; } }
+  @media screen and (max-width: 31.25em) {
+    .sign-form {
+      padding: 3rem;
+      width: 25rem; } }
+  .sign-form__title {
+    font-size: 4rem;
+    line-height: 5rem;
+    text-align: left;
+    color: #211138;
+    margin-bottom: 3rem; }
+    @media screen and (max-width: 31.25em) {
+      .sign-form__title {
+        font-size: 2rem;
+        line-height: 1; } }
+  .sign-form__forgot {
+    width: 100%;
+    text-align: right;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: #6200EA;
+    margin-bottom: 3rem; }
+    @media screen and (max-width: 31.25em) {
+      .sign-form__forgot {
+        font-size: 1rem;
+        line-height: 1.3rem; } }
+  .sign-form__input {
+    width: 100%;
+    height: 5rem;
+    display: block;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: rgba(33, 17, 56, 0.25);
+    background-color: #F4F3F5;
+    border: none;
+    padding: 1.6rem 2.4rem; }
+    .sign-form__input--mail {
+      margin-bottom: 1.5rem; }
+    .sign-form__input::placeholder {
+      color: rgba(33, 17, 56, 0.25);
+      font-weight: bold; }
+
+.btn,
+.btn:link,
+.btn:visited {
+  width: 100%;
+  height: 5rem;
+  text-align: center;
+  outline: none;
+  border: 2px solid #6200EA;
+  border-radius: 2.4rem;
+  background-color: #6200EA;
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2.4px;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  cursor: pointer; }
+  .btn:hover,
+  .btn:link:hover,
+  .btn:visited:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(98, 0, 234, 0.2); }
+  .btn:active,
+  .btn:link:active,
+  .btn:visited:active {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(98, 0, 234, 0.2); }
+  .btn:not(:last-child),
+  .btn:link:not(:last-child),
+  .btn:visited:not(:last-child) {
+    margin-bottom: 1.5rem; }
+
+.btn--log {
+  background-color: #fff;
+  color: #6200EA;
+  margin-bottom: 0.5rem; }

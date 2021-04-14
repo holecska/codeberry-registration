@@ -1,0 +1,39 @@
+// COLOR VARIABLES
+$color-primary: #6200EA;
+$color-secondary: #211138;
+$color-grey-dark: #B2ACBA;
+$color-grey-light: #F4F3F5;
+$color-white: #fff;
+// FONT VARIABLES
+$font-primary: 'Montserrat', sans-serif;
+//MEDIA QUERIES
+$bp-medium: 75em; // 1200px
+$bp-small: 31.25em; // 500px
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+body {
+  font-family: $font-primary;
+  font-weight: 400;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: [left-side-start] 50% [left-side-end right-side-start] 50% [right-side-end];
+  grid-template-rows: minmax(80rem, max-content) 10rem;
+  @media screen and (max-width: $bp-medium) {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, minmax(50rem, max-content)) 10rem;
+  }
+}

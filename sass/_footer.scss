@@ -1,0 +1,28 @@
+.footer {
+  grid-row: 2/3;
+  grid-column: 1/-1;
+  @media screen and (max-width: $bp-medium) {
+    grid-row: 3/4;
+  }
+  background-color: $color-secondary;
+  display: flex;
+  align-items: center;
+
+  &__text {
+    width: 100%;
+    font-family: $font-primary;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 2.4px;
+    line-height: 15px;
+    text-align: center;
+    color: $color-grey-dark;
+    text-transform: uppercase;
+    padding: 0 5rem;
+  }
+
+  &__link {
+    color: $color-primary;
+    cursor: pointer;
+  }
+}
